@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='eStore'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller='mainController'>
+
+
+
+<button ui-sref='home' type="button" name="button">HOME</button>
+<button ui-sref='shop' type="button" name="button">SHOP</button>
+<button ui-sref='cart' type="button" name="button">CART</button>
+
+
+
+
+
+
+<ui-view></ui-view>
+
+
+
+
+
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js'></script>
+<script src='app.js'></script>
+<script src='mainController.js'></script>
+<script src='mainService.js'></script>
+<script src='cart/cartCtrl.js'></script>
+<script src='home/homeCtrl.js'></script>
+<script src='shop/shopCtrl.js'></script>
+
+
+
+  </body>
+</html>
