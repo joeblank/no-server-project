@@ -1,6 +1,9 @@
 angular.module('eStore')
 .controller('mainController', function($scope, mainService) {
 
-$scope.broken = mainService.broken;
+$scope.title = mainService.title;
+$scope.shopLink = mainService.shopLink;
+$scope.footerInfoLinks = mainService.footerInfoLinks;
+
 
 })

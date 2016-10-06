@@ -14,6 +14,11 @@ angular.module('eStore', ['ui.router'])
                 templateUrl: 'shop/shop.html',
                 controller: 'shopCtrl'
             })
+            .state('details', {
+              url: '/item-details/:id',
+              templateUrl: 'details/details.html',
+              controller: 'detailsCtrl'
+            })
             .state('cart', {
                 url: '/cart',
                 templateUrl: 'cart/cart.html',

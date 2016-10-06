@@ -2,15 +2,22 @@
 <html ng-app='eStore'>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Article-Men's Clothing</title>
+    <link rel="stylesheet" href="css/reset.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
+    <link rel="stylesheet" href="home/home.css" media="screen" title="no title">
+    <link rel="stylesheet" href="shop/shop.css" media="screen" title="no title">
+    <link rel="stylesheet" href="details/details.css" media="screen" title="no title">
+
   </head>
   <body ng-controller='mainController'>
 
+<nav class='nav-container'>
+  <div class="title-container"><a ui-sref='home'>{{ title }}</a></div>
+  <div class="link-container"><a ui-sref='shop'>{{ shopLink }}</a></div>
+  <div ui-sref='cart' class="cart-icon"></div>
+</nav>
 
-
-<button ui-sref='home' type="button" name="button">HOME</button>
-<button ui-sref='shop' type="button" name="button">SHOP</button>
-<button ui-sref='cart' type="button" name="button">CART</button>
 
 
 
@@ -20,7 +27,19 @@
 <ui-view></ui-view>
 
 
-
+<footer class='footer'>
+  <div>
+    <div ng-repeat='link in footerInfoLinks' class="footer-info-links">{{ link }}</div>
+  </div>
+  <div class="footer-social-container">
+    <div class="footer-style">Subscribe!</div>
+    <div class="footer-style">Sign up to get the latest news....</div>
+    <div>
+      <input type="text" name="name" placeholder="Your Email">
+      <button type="button" name="button">OK</button>
+    </div>
+  </div>
+</footer>
 
 
 
@@ -32,6 +51,7 @@
 <script src='cart/cartCtrl.js'></script>
 <script src='home/homeCtrl.js'></script>
 <script src='shop/shopCtrl.js'></script>
+<script src='details/detailsCtrl.js'></script>
 
 
 

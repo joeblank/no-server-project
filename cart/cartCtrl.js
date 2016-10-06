@@ -1,7 +1,10 @@
 angular.module('eStore')
 .controller('cartCtrl', function($scope, mainService) {
 
-$scope.cart = mainService.cart;
+setTimeout(function() {
+  var cart = mainService.getCart();
+  $scope.cartItems = cart;
+}, 2000);
 
-
+$scope.cartItems = mainService.getCart();
 })
