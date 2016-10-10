@@ -4,7 +4,7 @@
       <img class='item-image' ng-src='{{item.image}}' alt="scarf" /><br>
       <div class='item-name'>{{item.name}}</div>
       <div class="item-brand">{{item.brand}}</div>
-      <div class="item-price">{{item.price}}</div>
+      <div class="item-price">{{item.price | currency}}</div>
     </div>
   </div>
 </section>

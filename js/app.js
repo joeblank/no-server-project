@@ -6,23 +6,27 @@ angular.module('eStore', ['ui.router'])
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'home/home.html',
+                templateUrl: 'views/home.html',
                 controller: 'homeCtrl'
             })
             .state('shop', {
                 url: '/shop',
-                templateUrl: 'shop/shop.html',
+                templateUrl: 'views/shop.html',
                 controller: 'shopCtrl'
             })
             .state('details', {
               url: '/item-details/:id',
-              templateUrl: 'details/details.html',
+              templateUrl: 'views/details.html',
               controller: 'detailsCtrl'
             })
             .state('cart', {
                 url: '/cart',
-                templateUrl: 'cart/cart.html',
+                templateUrl: 'views/cart.html',
                 controller: 'cartCtrl'
+            })
+            .state('returns', {
+              url: '/returns_&_exchanges',
+              templateUrl: 'views/returns.html'
             })
 
 
