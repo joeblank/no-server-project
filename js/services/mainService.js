@@ -28,6 +28,8 @@ this.getBrands = function() {
   return brands;
 }
 
+
+
 this.removeFromCart = function(id) {
   for (var i = 0; i < cartItems.length; i++) {
     console.log(cartItems[i]);

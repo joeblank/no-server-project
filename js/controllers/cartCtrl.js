@@ -19,14 +19,14 @@ $interval(function() {
 
 
 $scope.removeFromCart = function(obj) {
-  mainService.removeFromCart(obj);
+    mainService.removeFromCart(obj);
 }
 
 
 
 $(function() {
-  $('.remove-item').click(function() {
-    $('item-cart-container', this).hide();
+  $('.remove-item').on('click', function() {
+    $('.item-cart-container').fadeOut('slow');
   })
 })
 

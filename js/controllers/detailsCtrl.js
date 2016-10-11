@@ -1,5 +1,5 @@
 angular.module('eStore')
-.controller('detailsCtrl', function($scope, $stateParams, mainService) {
+.controller('detailsCtrl', function($scope, $stateParams, mainService, $timeout) {
 
 mainService.getOneItem($stateParams.id).then(function(response) {
   $scope.singleItem = response;
@@ -18,8 +18,10 @@ $scope.showHiddenCartDiv = function() {
 }
 
 $scope.addToCart = function (item, qty) {
+  if (qty > 0) {
   item.quantity = qty;
 mainService.addToCart(item);
+}
 }
 
 $scope.animation = function() {
@@ -28,6 +30,13 @@ $scope.animation = function() {
     })
   }
 
+$scope.hidePresent = function() {
+  $timeout(function() {
+    $(function() {
+      $('.present').hide()
+    })
+  }, 2900)
+}
 
   $(function() {
     $('.hidden-div-close').click(function() {
@@ -43,5 +52,17 @@ $(function() {
     })
   })
 })
+
+
+
+$(function() {
+  $('.add-to-cart-button').click(function() {
+    $('.present').css({
+      'animation': 'dropin 3s', 'display': 'block'
+
+    })
+  })
+})
+
 
 })

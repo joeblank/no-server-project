@@ -1,4 +1,5 @@
 <section class="outer-container">
+  <div class="present"></div>
   <section class="details-left-container">
     <div class="details-name">{{singleItem.name}}</div>
     <div class="details-brand">{{singleItem.brand}}</div>
@@ -18,7 +19,7 @@
         <option value="9">9</option>
         <option value="10">10(max)</option>
       </select>
-      <button ng-click='move(); showHiddenCartDiv(); addToCart(singleItem, dropDown)'class='add-to-cart-button' type="button" name="button">Add To Cart</button>
+      <button ng-click='hidePresent(); move(); showHiddenCartDiv(); addToCart(singleItem, dropDown)'class='add-to-cart-button' type="button" name="button">Add To Cart</button>
     </div>
 
     <div class="h6-container">

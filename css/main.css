@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.clock {
+/*.clock {
     background: url('http://www.clipartbest.com/cliparts/9Tp/RBE/9TpRBEqTE.png') no-repeat center;
     width: 25px;
     height: 25px;
@@ -20,13 +20,13 @@
     top: 10px;
     left: 10px;
     background-size: contain;
-}
+}*/
 
-@keyframes spin {
+/*@keyframes spin {
     100% {
         transform: rotate(360deg);
     }
-}
+}*/
 
 .cart-icon {
     width: 35px;

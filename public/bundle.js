@@ -57,21 +57,21 @@ $interval(function() {
 
 
 $scope.removeFromCart = function(obj) {
-  mainService.removeFromCart(obj);
+    mainService.removeFromCart(obj);
 }
 
 
 
 $(function() {
-  $('.remove-item').click(function() {
-    $('item-cart-container', this).hide();
+  $('.remove-item').on('click', function() {
+    $('.item-cart-container').fadeOut('slow');
   })
 })
 
 })
 
 angular.module('eStore')
-.controller('detailsCtrl', function($scope, $stateParams, mainService) {
+.controller('detailsCtrl', function($scope, $stateParams, mainService, $timeout) {
 
 mainService.getOneItem($stateParams.id).then(function(response) {
   $scope.singleItem = response;
@@ -90,8 +90,10 @@ $scope.showHiddenCartDiv = function() {
 }
 
 $scope.addToCart = function (item, qty) {
+  if (qty > 0) {
   item.quantity = qty;
 mainService.addToCart(item);
+}
 }
 
 $scope.animation = function() {
@@ -100,6 +102,13 @@ $scope.animation = function() {
     })
   }
 
+$scope.hidePresent = function() {
+  $timeout(function() {
+    $(function() {
+      $('.present').hide()
+    })
+  }, 2900)
+}
 
   $(function() {
     $('.hidden-div-close').click(function() {
@@ -115,6 +124,18 @@ $(function() {
     })
   })
 })
+
+
+
+$(function() {
+  $('.add-to-cart-button').click(function() {
+    $('.present').css({
+      'animation': 'dropin 3s', 'display': 'block'
+
+    })
+  })
+})
+
 
 })
 
@@ -185,7 +206,11 @@ angular.module('eStore')
 
                 $scope.something = function() {
                     var cart = mainService.itemsInCart();
+                    if (typeof cart === 'number') {
                     $scope.cartCount = (cart);
+                  } else {
+                    $scope.cartCount = 0;
+                  }
                 }
 
 
@@ -200,16 +225,23 @@ angular.module('eStore')
 
                 $scope.brandDiv = false;
                 $scope.showBrands = function() {
-                    $scope.brandDiv = $scope.brandDiv ? false : true;
+                    // $scope.brandDiv = $scope.brandDiv ? false : true;
+                    if (!$scope.brandDiv) {
+                      $scope.brandDiv = true;
+                    } else {
+                      $scope.brandDiv = false;
+
+                    }
                 }
 
-                $(function() {
-                  $('.clock').click(function() {
-                    $('.clock').css({'animation': 'spin 1s'}, function() {
-                      $('.clock').css()
-                    })
-                  })
-                })
+                // $(function() {
+                //   $('.clock').click(function() {
+                //     $('.clock').css({'animation': 'spin 1s'}, function() {
+                //       $('.clock').css()
+                //     })
+                //   })
+                // })
+
 
                 $(function() {
                   $('.link-container').hover(function() {
@@ -277,6 +309,8 @@ this.getDepartments = function() {
 this.getBrands = function() {
   return brands;
 }
+
+
 
 this.removeFromCart = function(id) {
   for (var i = 0; i < cartItems.length; i++) {

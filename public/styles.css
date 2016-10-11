@@ -133,6 +133,33 @@
     font-family: 'Lato', sans-serif;
 }
 
+.present {
+  background: url('http://www.freeiconspng.com/uploads/gift-box-icon-1.png') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  right: 19px;
+  animation: dropin 3s;
+  display: none;
+}
+
+@keyframes dropin {
+  50% {
+    transform: scale(.9);
+    transform-origin: 0px 200px;
+  }
+
+  99% {
+    transform: scale(.9);
+    transform-origin: 0px 200px;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 .details-left-container {
     width: 35%;
 }
@@ -142,6 +169,8 @@
     margin-top: 50px;
     padding-bottom: 10px;
 }
+
+
 
 .details-brand {
     padding-top: 10px;
@@ -194,7 +223,7 @@
     margin-top: 50px;
 }
 
-@keyframes photo {
+/*@keyframes photo {
 
   50% {
     transform-origin: 512px -190px;
@@ -208,7 +237,7 @@
     transform: scale(0px);
   }
 
-}
+}*/
 
 .details-bottom-container {
     display: flex;
@@ -298,7 +327,7 @@
     position: relative;
 }
 
-.clock {
+/*.clock {
     background: url('http://www.clipartbest.com/cliparts/9Tp/RBE/9TpRBEqTE.png') no-repeat center;
     width: 25px;
     height: 25px;
@@ -307,13 +336,13 @@
     top: 10px;
     left: 10px;
     background-size: contain;
-}
+}*/
 
-@keyframes spin {
+/*@keyframes spin {
     100% {
         transform: rotate(360deg);
     }
-}
+}*/
 
 .cart-icon {
     width: 35px;

@@ -10,7 +10,11 @@ angular.module('eStore')
 
                 $scope.something = function() {
                     var cart = mainService.itemsInCart();
+                    if (typeof cart === 'number') {
                     $scope.cartCount = (cart);
+                  } else {
+                    $scope.cartCount = 0;
+                  }
                 }
 
 
@@ -25,16 +29,23 @@ angular.module('eStore')
 
                 $scope.brandDiv = false;
                 $scope.showBrands = function() {
-                    $scope.brandDiv = $scope.brandDiv ? false : true;
+                    // $scope.brandDiv = $scope.brandDiv ? false : true;
+                    if (!$scope.brandDiv) {
+                      $scope.brandDiv = true;
+                    } else {
+                      $scope.brandDiv = false;
+
+                    }
                 }
 
-                $(function() {
-                  $('.clock').click(function() {
-                    $('.clock').css({'animation': 'spin 1s'}, function() {
-                      $('.clock').css()
-                    })
-                  })
-                })
+                // $(function() {
+                //   $('.clock').click(function() {
+                //     $('.clock').css({'animation': 'spin 1s'}, function() {
+                //       $('.clock').css()
+                //     })
+                //   })
+                // })
+
 
                 $(function() {
                   $('.link-container').hover(function() {
